@@ -1,0 +1,35 @@
+# --- runtime state -------------------------------------------------------
+# The demo dataset itself (data/store.json) IS committed - it is fictitious
+# and is what makes a fresh clone immediately demoable. Everything below is
+# machine-local churn.
+data/backups/
+data/code-backups/
+data/proposals.json
+data/*.log
+data/*.tmp
+data/store.json.tmp
+
+# --- export tooling ------------------------------------------------------
+# The safety blocklist is local-only: it names the very things that must never
+# be published, so it must never be published either.
+.export-blocklist
+
+# --- python --------------------------------------------------------------
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# --- editors / OS --------------------------------------------------------
+.vscode/
+.idea/
+Thumbs.db
+ehthumbs.db
+desktop.ini
+*.swp
+*~
+
+# --- OneDrive / Office noise --------------------------------------------
+~$*
+*.tmp
+.~lock.*

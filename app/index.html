@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Boards</title>
+<script>
+  (() => {
+    const param = new URLSearchParams(window.location.search).get("scoutTheme");
+    const theme = param || localStorage.getItem("sfmcTheme") ||
+      (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    document.documentElement.setAttribute("data-theme", theme);
+  })();
+</script>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand">
+    <span class="logo">&nbsp;</span>
+    <h1>Boards</h1>
+    <span class="sub" id="meta"></span>
+  </div>
+  <div class="toolbar">
+    <button class="tab on" data-view="board">Boards</button>
+    <button class="tab" data-view="clients">Clients</button>
+    <button class="tab" data-view="items">Items</button>
+    <button class="tab" data-view="dashboard">Dashboard</button>
+    <button class="tab" data-view="proposals">Proposals <span class="badge" id="propBadge"></span></button>
+    <span class="divider"></span>
+    <input type="search" id="q" placeholder="Search title, owner, tag…">
+    <select id="fAssignee"><option value="">All MS owners</option></select>
+    <select id="fClientOwner"><option value="">All client owners</option></select>
+    <select id="fType"><option value="">All types</option></select>
+    <select id="fEscalation"><option value="">All escalations</option></select>
+    <select id="fMeeting"><option value="">All meeting statuses</option></select>
+    <span class="chip" id="fHideClosed">Hide Closed</span>
+    <span class="spacer"></span>
+    <button class="btn" id="syncBtn" title="Pull work items from Azure DevOps for linked clients">⟳ Sync ADO</button>
+    <button class="btn" id="themeBtn" title="Toggle theme">◐</button>
+    <a class="btn" href="/readme" target="_blank" rel="noopener" title="Open the documentation">?</a>
+    <button class="btn primary" id="addItemBtn">+ Work item</button>
+  </div>
+</header>
+
+<div class="layout">
+  <nav class="rail" id="rail"></nav>
+  <main id="main"></main>
+</div>
+
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer"></aside>
+<div class="modal-wrap" id="modalWrap"><div class="modal" id="modal"></div></div>
+<div class="toasts" id="toasts"></div>
+
+<script src="app.js"></script>
+</body>
+</html>

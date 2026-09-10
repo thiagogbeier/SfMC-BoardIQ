@@ -1,0 +1,10 @@
+{
+  "name": "SfMC:BoardIQ",
+  "logo": "SfMC",
+  "title": "BoardIQ",
+  "port": 8791,
+  "taskName": "SfMC-BoardIQ (demo)",
+  "pinnedBottom": ["my-team", "manager-1-1", "mylearning"],
+  "adoEnabled": false,
+  "demo": true
+}
