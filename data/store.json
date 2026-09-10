@@ -180,7 +180,7 @@
   ],
   "items": [
     {
-      "id": "10ee7342cbfb",
+      "id": "81a23abac3b7",
       "source": "manual",
       "clientId": "northwind",
       "type": "User Story",
@@ -197,13 +197,13 @@
       "order": 0,
       "comments": [
         {
-          "id": "47de3b94",
+          "id": "431f1cc6",
           "author": "Alex Moreau",
           "text": "Wave 2 retro complete. Two lessons applied: earlier number-porting checks and a longer soak period.",
           "created": "2026-09-04T14:42:00+01:00"
         },
         {
-          "id": "39bc2c07",
+          "id": "b4aa4441",
           "author": "Dana Whitfield",
           "text": "Site contacts confirmed for all 14 EMEA locations.",
           "created": "2026-09-08T14:14:00+01:00"
@@ -229,7 +229,7 @@
       "createdBy": "Demo"
     },
     {
-      "id": "c887577b92b8",
+      "id": "68491ca747e1",
       "source": "manual",
       "clientId": "northwind",
       "type": "Bug",
@@ -267,7 +267,7 @@
       "createdBy": "Demo"
     },
     {
-      "id": "72e3b6b88d09",
+      "id": "c7cbbcd474c5",
       "source": "manual",
       "clientId": "northwind",
       "type": "User Story",
@@ -302,7 +302,7 @@
       "createdBy": "Demo"
     },
     {
-      "id": "3b4794173602",
+      "id": "665ceec34180",
       "source": "manual",
       "clientId": "northwind",
       "type": "Meeting",
@@ -337,7 +337,7 @@
       "createdBy": "Demo"
     },
     {
-      "id": "45bada30fbdb",
+      "id": "ec5065d0ca0b",
       "source": "manual",
       "clientId": "northwind",
       "type": "Task",
@@ -372,7 +372,7 @@
       "createdBy": "Demo"
     },
     {
-      "id": "d44b9a81fe5a",
+      "id": "b5e1943548da",
       "source": "manual",
       "clientId": "northwind",
       "type": "Task",
@@ -407,7 +407,7 @@
       "createdBy": "Demo"
     },
     {
-      "id": "1606195f1861",
+      "id": "31d86517f78b",
       "source": "manual",
       "clientId": "northwind",
       "type": "Meeting",
@@ -443,7 +443,7 @@
       "createdBy": "Demo"
     },
     {
-      "id": "048aac80a6a0",
+      "id": "e47bd080680d",
       "source": "manual",
       "clientId": "northwind",
       "type": "Risk",
@@ -480,7 +480,7 @@
       "createdBy": "Demo"
     },
     {
-      "id": "fe31b236687d",
+      "id": "176e8e1ee121",
       "source": "manual",
       "clientId": "contoso-financial",
       "type": "User Story",
@@ -497,13 +497,13 @@
       "order": 0,
       "comments": [
         {
-          "id": "8bf829c8",
+          "id": "f4733100",
           "author": "Jordan Reyes",
           "text": "Persona model agreed: workforce, privileged, external, service, break-glass.",
           "created": "2026-08-31T14:10:00+01:00"
         },
         {
-          "id": "29adeb06",
+          "id": "359dea4c",
           "author": "Marcus Bell",
           "text": "Risk and compliance signed off on the report-only approach.",
           "created": "2026-09-07T14:21:00+01:00"
@@ -529,7 +529,7 @@
       "createdBy": "Demo"
     },
     {
-      "id": "6bee9b730049",
+      "id": "b711b38ce411",
       "source": "manual",
       "clientId": "contoso-financial",
       "type": "Bug",
@@ -545,19 +545,19 @@
       "order": 0,
       "comments": [
         {
-          "id": "17df270c",
+          "id": "2b6a543c",
           "author": "Sam Okafor",
           "text": "Confirmed the rule was introduced in change CHG-4471. Rolled back in report-only while PG assesses.",
           "created": "2026-09-01T14:03:00+01:00"
         },
         {
-          "id": "585eb769",
+          "id": "44715240",
           "author": "Lena Vasquez",
           "text": "Partners have a manual workaround but it will not hold past month end.",
           "created": "2026-09-04T14:42:00+01:00"
         },
         {
-          "id": "389e37e2",
+          "id": "7d6cbad9",
           "author": "Sam Okafor",
           "text": "DCR-24817 moved to in progress. Targeting a fix in the next service update.",
           "created": "2026-09-10T14:00:00+01:00"
@@ -586,7 +586,7 @@
       "createdBy": "Demo"
     },
     {
-      "id": "f8db05aea0dc",
+      "id": "78a78f75769e",
       "source": "manual",
       "clientId": "contoso-financial",
       "type": "Task",
@@ -621,7 +621,7 @@
       "createdBy": "Demo"
     },
     {
-      "id": "fd6086a15a9b",
+      "id": "aabdbcd5e12d",
       "source": "manual",
       "clientId": "contoso-financial",
       "type": "Milestone",
@@ -657,7 +657,7 @@
       "createdBy": "Demo"
     },
     {
-      "id": "1cb8f69fd9ab",
+      "id": "4a5c112811cd",
       "source": "manual",
       "clientId": "contoso-financial",
       "type": "User Story",
@@ -692,7 +692,7 @@
       "createdBy": "Demo"
     },
     {
-      "id": "21dd1cdd53a8",
+      "id": "630448f8cfd9",
       "source": "manual",
       "clientId": "contoso-financial",
       "type": "Risk",
@@ -730,7 +730,7 @@
       "createdBy": "Demo"
     },
     {
-      "id": "8d6ddc386041",
+      "id": "a5e1c222a103",
       "source": "manual",
       "clientId": "contoso-financial",
       "type": "Meeting",
@@ -764,7 +764,7 @@
       "createdBy": "Demo"
     },
     {
-      "id": "8d39dd769b8a",
+      "id": "e47dd6e87209",
       "source": "manual",
       "clientId": "contoso-financial",
       "type": "Task",
@@ -799,7 +799,7 @@
       "createdBy": "Demo"
     },
     {
-      "id": "75ebce1a61d2",
+      "id": "d2b546d435b0",
       "source": "manual",
       "clientId": "contoso-financial",
       "type": "Task",
@@ -833,7 +833,7 @@
       "createdBy": "Demo"
     },
     {
-      "id": "28462c3b5694",
+      "id": "8a0e9fed5ce3",
       "source": "manual",
       "clientId": "fabrikam-health",
       "type": "Milestone",
@@ -849,7 +849,7 @@
       "order": 0,
       "comments": [
         {
-          "id": "869dc267",
+          "id": "77989ce0",
           "author": "Taylor Nkemdirim",
           "text": "Pulling delivery evidence now. Three avoided SEVs is the strongest line.",
           "created": "2026-09-06T14:28:00+01:00"
@@ -877,7 +877,7 @@
       "createdBy": "Demo"
     },
     {
-      "id": "9f49b402e900",
+      "id": "bbf325f690ae",
       "source": "manual",
       "clientId": "fabrikam-health",
       "type": "User Story",
@@ -913,7 +913,7 @@
       "createdBy": "Demo"
     },
     {
-      "id": "775be8b665ea",
+      "id": "fcd4be6a7579",
       "source": "manual",
       "clientId": "fabrikam-health",
       "type": "Bug",
@@ -930,13 +930,13 @@
       "order": 1,
       "comments": [
         {
-          "id": "b4ebd483",
+          "id": "5786264f",
           "author": "Riley Chen",
           "text": "Reproduced in the lab with the vendor's own installer. Not environment-specific.",
           "created": "2026-08-29T14:24:00+01:00"
         },
         {
-          "id": "7af28c45",
+          "id": "7ba1f8bc",
           "author": "Hugo Lindqvist",
           "text": "Clinical leadership will not accept a blanket exclusion. Needs a targeted rule.",
           "created": "2026-09-05T14:35:00+01:00"
@@ -964,7 +964,7 @@
       "createdBy": "Demo"
     },
     {
-      "id": "21371f6da927",
+      "id": "d2c9e2aed5f9",
       "source": "manual",
       "clientId": "fabrikam-health",
       "type": "User Story",
@@ -999,7 +999,7 @@
       "createdBy": "Demo"
     },
     {
-      "id": "91462dec8810",
+      "id": "6f66ce761c8d",
       "source": "manual",
       "clientId": "fabrikam-health",
       "type": "Task",
@@ -1034,7 +1034,7 @@
       "createdBy": "Demo"
     },
     {
-      "id": "f68b0a9d8edf",
+      "id": "fc6bfbbe861a",
       "source": "manual",
       "clientId": "fabrikam-health",
       "type": "Task",
@@ -1069,7 +1069,7 @@
       "createdBy": "Demo"
     },
     {
-      "id": "edf273e742ea",
+      "id": "e3c80e2b6b4e",
       "source": "manual",
       "clientId": "fabrikam-health",
       "type": "Task",
@@ -1105,7 +1105,7 @@
       "createdBy": "Demo"
     },
     {
-      "id": "bad0624a64da",
+      "id": "a19d8464800c",
       "source": "manual",
       "clientId": "fabrikam-health",
       "type": "Bug",
@@ -1141,7 +1141,7 @@
       "createdBy": "Demo"
     },
     {
-      "id": "54bb33826e6e",
+      "id": "94d749cdaced",
       "source": "manual",
       "clientId": "my-team",
       "type": "Task",
@@ -1176,7 +1176,7 @@
       "createdBy": "Demo"
     },
     {
-      "id": "217fc20eea4b",
+      "id": "bf4a106a8383",
       "source": "manual",
       "clientId": "my-team",
       "type": "Meeting",
@@ -1211,7 +1211,7 @@
       "createdBy": "Demo"
     },
     {
-      "id": "31a874b7e5f1",
+      "id": "86451917aa88",
       "source": "manual",
       "clientId": "my-team",
       "type": "Task",
@@ -1246,7 +1246,7 @@
       "createdBy": "Demo"
     },
     {
-      "id": "62c614e6cd43",
+      "id": "1db7e92050ac",
       "source": "manual",
       "clientId": "my-team",
       "type": "Meeting",
@@ -1281,7 +1281,7 @@
       "createdBy": "Demo"
     },
     {
-      "id": "d29e644cbb29",
+      "id": "49750eb113d0",
       "source": "manual",
       "clientId": "manager-1-1",
       "type": "Task",
@@ -1316,7 +1316,7 @@
       "createdBy": "Demo"
     },
     {
-      "id": "b698619e8dce",
+      "id": "9d45fb7fdab2",
       "source": "manual",
       "clientId": "manager-1-1",
       "type": "Task",
@@ -1332,7 +1332,7 @@
       "order": 0,
       "comments": [
         {
-          "id": "e5144177",
+          "id": "4f8bd7fa",
           "author": "Alex Moreau",
           "text": "Bringing the hours breakdown to the next 1:1.",
           "created": "2026-09-09T14:07:00+01:00"
@@ -1360,7 +1360,7 @@
       "createdBy": "Demo"
     },
     {
-      "id": "f0264ba56424",
+      "id": "b3b65cac212d",
       "source": "manual",
       "clientId": "manager-1-1",
       "type": "Milestone",
@@ -1395,7 +1395,7 @@
       "createdBy": "Demo"
     },
     {
-      "id": "78cd53e966ae",
+      "id": "963aec185344",
       "source": "manual",
       "clientId": "mylearning",
       "type": "Milestone",
@@ -1430,7 +1430,7 @@
       "createdBy": "Demo"
     },
     {
-      "id": "06269bdaad73",
+      "id": "3519373333a8",
       "source": "manual",
       "clientId": "mylearning",
       "type": "Task",
@@ -1466,7 +1466,7 @@
       "createdBy": "Demo"
     },
     {
-      "id": "12a5ef4df852",
+      "id": "8d9ee490c1b1",
       "source": "manual",
       "clientId": "mylearning",
       "type": "Task",
@@ -1501,7 +1501,7 @@
       "createdBy": "Demo"
     },
     {
-      "id": "6a5f3abc6175",
+      "id": "407ba57a1abf",
       "source": "manual",
       "clientId": "mylearning",
       "type": "Task",
@@ -1536,7 +1536,7 @@
       "createdBy": "Demo"
     },
     {
-      "id": "722c4b047da6",
+      "id": "12e40bcf3a98",
       "source": "manual",
       "clientId": "mylearning",
       "type": "Task",

@@ -6,7 +6,8 @@ mistaken for a real customer.
 
 Run:  python seed_demo.py
 """
-import json, os, random, uuid
+import hashlib
+import json, os, random
 from datetime import datetime, timedelta, timezone
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
@@ -15,6 +16,18 @@ STORE = os.path.join(DATA, "store.json")
 
 random.seed(20260908)  # stable output between runs
 NOW = datetime.now(timezone.utc).astimezone()
+
+
+def stable_id(*parts, length=12):
+    """Deterministic id derived from the item's own identity.
+
+    uuid4() ignores random.seed(), so using it here regenerated every id on
+    every run - a ~96-line git diff on data/store.json each export, with no
+    real change in it. Hashing the content instead makes reseeding idempotent,
+    so a diff only ever shows something that actually changed.
+    """
+    key = "\u0000".join(str(p) for p in parts)
+    return hashlib.sha1(key.encode("utf-8")).hexdigest()[:length]
 
 
 def iso(days_ago, hour=10):
@@ -284,7 +297,7 @@ def build():
         key = (cid, state)
         order[key] = order.get(key, -1) + 1
         it = {
-            "id": uuid.uuid4().hex[:12],
+            "id": stable_id(cid, title),
             "source": "manual",
             "clientId": cid,
             "type": typ,
@@ -318,7 +331,7 @@ def build():
         it.update(extra)
         for author, ago, text in COMMENTS.get(title, []):
             it["comments"].append({
-                "id": uuid.uuid4().hex[:8],
+                "id": stable_id(title, author, text, length=8),
                 "author": author,
                 "text": text,
                 "created": iso(ago, hour=14),
