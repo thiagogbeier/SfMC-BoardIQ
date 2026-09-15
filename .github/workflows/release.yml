@@ -1,0 +1,40 @@
+name: Package and release
+
+# Builds the shareable SfMC-BoardIQ zip (via Package.ps1) on every push to main
+# and republishes it as a single rolling "latest" GitHub Release.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build package
+        shell: pwsh
+        run: |
+          .\Package.ps1 -SkipExport -Source $env:GITHUB_WORKSPACE -OutDir "$env:GITHUB_WORKSPACE\dist" -Version latest
+
+      - name: Publish rolling "latest" release
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          $zip = Join-Path $env:GITHUB_WORKSPACE 'dist\SfMC-BoardIQ-latest.zip'
+          if (-not (Test-Path $zip)) { throw "Expected zip not found: $zip" }
+
+          # Remove any previous "latest" release + tag so the tag always points
+          # at the commit that produced this build.
+          gh release delete latest --yes --cleanup-tag 2>$null
+
+          gh release create latest $zip `
+            --title "Latest build" `
+            --target $env:GITHUB_SHA `
+            --notes "Automated build from commit $env:GITHUB_SHA. Download, extract, and double-click Start.cmd."
