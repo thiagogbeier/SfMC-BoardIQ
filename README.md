@@ -10,6 +10,9 @@ no service, bound to `127.0.0.1`.
 This repository ships with **fictitious demo data** (Contoso, Northwind, Fabrikam),
 so a fresh clone is immediately runnable and safe to screen-share.
 
+> **Here for a hackathon?** Jump to [`docs/HACKATHON.md`](docs/HACKATHON.md) — four
+> runnable prompts, each with a one-command reset.
+
 ![Portfolio view](docs/screenshots/01-portfolio.jpg)
 
 ---
@@ -395,6 +398,7 @@ SfMC-BoardIQ\
 │  └─ code-backups\        pre-update copies from Update-FromSfMC  (ignored)
 └─ docs\
    ├─ INSTALL.html         browser-based install guide for recipients
+   ├─ HACKATHON.md         four runnable prompts for building on the system
    ├─ SfMC-BoardIQ-overview.html   the deck
    ├─ deck\                theme.css · nav.js — deck styling and navigation
    └─ screenshots\         deck images (.jpg)

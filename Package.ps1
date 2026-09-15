@@ -85,7 +85,7 @@ $required = @(
   'Start-Boards.ps1', 'Watchdog.ps1', 'Install-Autostart.ps1', 'seed_demo.py',
   'app\index.html', 'app\app.js', 'app\styles.css',
   'data\store.json',
-  'docs\INSTALL.html', 'docs\SfMC-BoardIQ-overview.html',
+  'docs\INSTALL.html', 'docs\SfMC-BoardIQ-overview.html', 'docs\HACKATHON.md',
   'exports\README.md'
 )
 $missing = @()
