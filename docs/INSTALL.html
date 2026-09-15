@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SfMC:BoardIQ — Installation Guide</title>
+<script>
+  (() => {
+    const p = new URLSearchParams(location.search).get("scoutTheme");
+    const t = p || localStorage.getItem("boardiqDocsTheme") ||
+      (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    document.documentElement.setAttribute("data-theme", t);
+  })();
+</script>
+<style>
+:root {
+  color-scheme: light;
+  --bg: #f7f4ef; --elevated: #fcfbf8; --surface: #ffffff; --soft: #f5f5f5;
+  --border: #dedede; --border-strong: #919191;
+  --text: #242424; --muted: #5c5c5c; --soft-text: #6f6f6f;
+  --accent: #b11f4b; --accent-soft: rgba(177,31,75,.08); --accent-fg: #fff;
+  --ok: #16a34a; --danger: #dc2626; --warn: #f59e0b;
+  --shadow: 0 18px 48px rgba(0,0,0,.12);
+}
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #3d3b3a; --elevated: #343231; --surface: #292929; --soft: #2e2e2e;
+  --border: #474747; --border-strong: #5f5f5f;
+  --text: #dedede; --muted: #919191; --soft-text: #b0b0b0;
+  --accent: #fd8ea1; --accent-soft: rgba(253,142,161,.14); --accent-fg: #1a1a1a;
+  --ok: #4ade80; --danger: #f87171; --warn: #fbbf24;
+  --shadow: 0 18px 48px rgba(0,0,0,.32);
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body {
+  background: var(--bg); color: var(--text);
+  font-family: "Segoe UI", Aptos, Calibri, -apple-system, sans-serif;
+  line-height: 1.6;
+}
+.bar {
+  position: sticky; top: 0; z-index: 10;
+  background: var(--elevated); border-bottom: 1px solid var(--border);
+  padding: 10px 24px; display: flex; gap: 12px; align-items: center;
+  backdrop-filter: blur(8px);
+}
+.logo {
+  background: var(--accent); color: var(--accent-fg); font-size: 11px;
+  font-weight: 700; letter-spacing: .06em; padding: 4px 10px; border-radius: .625rem;
+}
+.bar strong { font-size: 14px; }
+.bar .spacer { flex: 1; }
+.btn {
+  border: 1px solid var(--border); background: var(--surface); color: var(--text);
+  border-radius: .625rem; padding: 5px 12px; font: inherit; font-size: 13px;
+  cursor: pointer; text-decoration: none;
+}
+.btn:hover { border-color: var(--border-strong); }
+.wrap { max-width: 900px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font-size: clamp(28px, 4vw, 40px); margin: 0 0 8px; letter-spacing: -.02em; font-weight: 600; }
+.lede { font-size: 17px; color: var(--muted); max-width: 64ch; margin: 0 0 8px; }
+h2 {
+  font-size: 22px; margin: 44px 0 12px; padding-bottom: 8px;
+  border-bottom: 1px solid var(--border); font-weight: 600; letter-spacing: -.01em;
+}
+h3 { font-size: 16px; margin: 26px 0 8px; font-weight: 600; }
+p, li { font-size: 15px; }
+ul, ol { padding-left: 22px; }
+li { margin-bottom: 6px; }
+code {
+  font-family: Consolas, "Courier New", monospace; font-size: 13px;
+  background: var(--soft); border: 1px solid var(--border);
+  border-radius: 4px; padding: 1px 5px;
+}
+pre {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: .625rem; padding: 14px 16px; overflow-x: auto;
+  line-height: 1.5; font-size: 13px;
+}
+pre code { background: none; border: none; padding: 0; }
+table { width: 100%; border-collapse: collapse; margin: 14px 0 22px; }
+th, td { text-align: left; padding: 9px 12px; border-bottom: 1px solid var(--border); font-size: 14px; vertical-align: top; }
+th { font-size: 11px; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); font-weight: 600; }
+.card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 14px; padding: 16px 18px; margin: 16px 0;
+}
+.card.accent { border-left: 3px solid var(--accent); }
+.card.warn   { border-left: 3px solid var(--warn); }
+.card.ok     { border-left: 3px solid var(--ok); }
+.card.bad    { border-left: 3px solid var(--danger); }
+.card h4 { margin: 0 0 6px; font-size: 14px; font-weight: 600; }
+.card p:last-child, .card ul:last-child { margin-bottom: 0; }
+.card p:first-of-type { margin-top: 0; }
+.pill {
+  display: inline-block; font-size: 11.5px; padding: 3px 10px; border-radius: 999px;
+  background: var(--soft); color: var(--muted); border: 1px solid var(--border);
+  margin: 0 4px 6px 0;
+}
+.pill.accent { background: var(--accent-soft); color: var(--accent); border-color: var(--accent); }
+.steps { counter-reset: s; list-style: none; padding: 0; margin: 18px 0; }
+.steps > li {
+  counter-increment: s; position: relative; padding: 0 0 4px 46px; margin-bottom: 22px;
+}
+.steps > li::before {
+  content: counter(s); position: absolute; left: 0; top: 0;
+  width: 30px; height: 30px; border-radius: 50%;
+  background: var(--accent); color: var(--accent-fg);
+  display: grid; place-items: center; font-size: 14px; font-weight: 700;
+}
+.steps h3 { margin-top: 2px; }
+img.shot {
+  max-width: 100%; border: 1px solid var(--border);
+  border-radius: 10px; box-shadow: var(--shadow); margin: 10px 0 4px; display: block;
+}
+.cap { font-size: 12.5px; color: var(--soft-text); margin: 0 0 18px; }
+.toc { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 14px 20px; margin: 24px 0 8px; }
+.toc ol { margin: 6px 0 0; }
+.toc a { color: var(--text); }
+kbd {
+  font-family: inherit; font-size: 12px; border: 1px solid var(--border-strong);
+  border-bottom-width: 2px; border-radius: 5px; padding: 1px 6px; background: var(--soft);
+}
+.foot { margin-top: 56px; padding-top: 18px; border-top: 1px solid var(--border); font-size: 13px; color: var(--soft-text); }
+</style>
+</head>
+<body>
+
+<div class="bar">
+  <span class="logo">SfMC</span>
+  <strong>BoardIQ — Installation Guide</strong>
+  <span class="spacer"></span>
+  <button class="btn" id="theme" title="Toggle theme">◐</button>
+  <a class="btn" href="SfMC-BoardIQ-overview.html">Solution overview →</a>
+</div>
+
+<div class="wrap">
+
+<h1>Set up SfMC:BoardIQ</h1>
+<p class="lede">
+  A delivery board for every engagement you own — customer or internal — that keeps
+  itself current by reading your mail and Teams and <strong>proposing</strong> changes
+  for you to approve.
+</p>
+<p>
+  <span class="pill accent">Runs on your machine</span>
+  <span class="pill">No install</span>
+  <span class="pill">No database</span>
+  <span class="pill">No cloud service</span>
+  <span class="pill">Python standard library only</span>
+</p>
+
+<div class="card ok">
+  <h4>Ten-second version</h4>
+  <p>
+    Unzip anywhere → double-click <code>Start.cmd</code> → your browser opens at
+    <code>http://127.0.0.1:8791</code> with six demo clients already loaded.
+    Everything below is detail for when that isn't enough.
+  </p>
+</div>
+
+<div class="toc">
+  <strong style="font-size:13px">On this page</strong>
+  <ol>
+    <li><a href="#req">What you need</a></li>
+    <li><a href="#install">Install and first run</a></li>
+    <li><a href="#tour">A quick tour</a></li>
+    <li><a href="#keep">Keep it running without a terminal</a></li>
+    <li><a href="#data">Demo data, and making it yours</a></li>
+    <li><a href="#scout">Optional: the Microsoft Scout automation</a></li>
+    <li><a href="#trouble">Troubleshooting</a></li>
+    <li><a href="#files">What's in the folder</a></li>
+  </ol>
+</div>
+
+<h2 id="req">1. What you need</h2>
+
+<table>
+  <tr><th>Requirement</th><th>Notes</th></tr>
+  <tr><td><strong>Windows 10 or 11</strong></td><td>PowerShell 5.1 (built in) is enough. PowerShell 7 also works.</td></tr>
+  <tr><td><strong>Python 3.9 or newer</strong></td><td>Standard library only — there is nothing to <code>pip install</code>.</td></tr>
+  <tr><td><strong>A browser</strong></td><td>Any modern one.</td></tr>
+  <tr><td><strong>Admin rights</strong></td><td><strong>Not required</strong> — everything runs as you, in your own user profile.</td></tr>
+</table>
+
+<h3>Check Python first</h3>
+<pre><code>python --version</code></pre>
+<p>You want <code>Python 3.9.x</code> or higher.</p>
+
+<div class="card warn">
+  <h4>If that opened the Microsoft Store instead</h4>
+  <p>
+    You have the Windows execution alias rather than a real interpreter. Either install
+    Python from <a href="https://www.python.org/downloads/">python.org</a> (tick
+    <em>Add python.exe to PATH</em> during setup), or switch the alias off under
+    <strong>Settings → Apps → Advanced app settings → App execution aliases</strong>.
+  </p>
+</div>
+
+<h2 id="install">2. Install and first run</h2>
+
+<ol class="steps">
+
+<li>
+<h3>Unzip it somewhere sensible</h3>
+<p>
+  Anywhere you have write access — <code>C:\Tools\SfMC-BoardIQ</code>,
+  <code>%USERPROFILE%\SfMC-BoardIQ</code>, a folder in your Documents. It does not
+  matter, and it does not have to be the same path as anyone else on the team.
+</p>
+<div class="card warn">
+  <h4>Extract properly — don't run it from inside the .zip</h4>
+  <p>
+    Right-click the .zip → <strong>Extract All…</strong> Opening the zip and
+    double-clicking <code>Start.cmd</code> from the preview window will fail, because
+    Windows extracts that one file to a temporary folder without the rest of the app.
+  </p>
+</div>
+</li>
+
+<li>
+<h3>Double-click <code>Start.cmd</code></h3>
+<p>
+  A console window opens, the server starts, and your browser lands on
+  <code>http://127.0.0.1:8791</code>.
+</p>
+<p>
+  <code>Start.cmd</code> exists to clear two Windows guard rails that otherwise stop a
+  shared zip dead — see <a href="#motw">Mark of the Web</a> below. It changes nothing
+  outside this folder.
+</p>
+<div class="card">
+  <h4>Prefer the terminal?</h4>
+  <pre><code>cd "C:\path\to\SfMC-BoardIQ"
+Get-ChildItem -Recurse -File | Unblock-File
+.\Start-Boards.ps1</code></pre>
+  <p style="margin-bottom:0">
+    The <code>Unblock-File</code> line is only needed once, on the first run after
+    extracting.
+  </p>
+</div>
+</li>
+
+<li>
+<h3>Confirm it worked</h3>
+<p>
+  You should see <strong>6 clients · 29 open items</strong> in the header and a board
+  full of cards. If you do, you're done — everything works.
+</p>
+<img class="shot" src="screenshots/01-portfolio.jpg" alt="The portfolio view with six demo clients">
+<p class="cap">The portfolio view. All companies and people shown are fictitious.</p>
+<p>Leave the console window open while you use the board, or see <a href="#keep">section 4</a>.</p>
+</li>
+
+</ol>
+
+<h2 id="tour">3. A quick tour</h2>
+
+<table>
+  <tr><th>Tab</th><th>What it's for</th></tr>
+  <tr><td><strong>Boards</strong></td><td>Kanban per client. Drag cards between columns. Every chip answers a question you'd otherwise have to open the item to ask — who owns it on the customer side, is it escalated, is there a support case, is a meeting booked.</td></tr>
+  <tr><td><strong>Clients</strong></td><td>Add clients, set the client lead, set search terms, request a scan.</td></tr>
+  <tr><td><strong>Items</strong></td><td>Every item as one flat sortable list. Filter, multi-select, bulk archive or delete.</td></tr>
+  <tr><td><strong>Dashboard</strong></td><td>New vs closed over 7/15/30/90/120/180 days, ageing, escalation load, overdue items, meetings still to book.</td></tr>
+  <tr><td><strong>Proposals</strong></td><td>The review queue — proposed change shown against the current item, field by field. Nothing reaches a board without passing through here.</td></tr>
+</table>
+
+<img class="shot" src="screenshots/04-dashboard.jpg" alt="The dashboard view">
+<p class="cap">The dashboard. Charts are hand-drawn SVG — no charting library, no external requests.</p>
+
+<p>
+  Full documentation is served by the app itself at
+  <code>http://127.0.0.1:8791/readme</code>, or press <strong>?</strong> in the toolbar.
+</p>
+
+<h2 id="keep">4. Keep it running without a terminal</h2>
+
+<p>
+  The console window from <code>Start.cmd</code> has to stay open. To have the board
+  start on its own at sign-in and stay up, register the scheduled task:
+</p>
+
+<pre><code>cd "C:\path\to\SfMC-BoardIQ"
+.\Install-Autostart.ps1</code></pre>
+
+<p>That registers a task which:</p>
+<ul>
+  <li>starts the server when you sign in;</li>
+  <li>re-checks every 5 minutes and restarts it if it stopped;</li>
+  <li>runs hidden — no console window, and <strong>Microsoft Scout does not need to be open</strong>.</li>
+</ul>
+
+<h3>Managing it afterwards</h3>
+<pre><code>.\Watchdog.ps1 -Status            # is it up?
+.\Watchdog.ps1                    # start if down
+.\Watchdog.ps1 -Restart           # stop and start fresh
+.\Install-Autostart.ps1 -Status   # task state, last run, next run
+.\Install-Autostart.ps1 -Remove   # unregister
+</code></pre>
+
+<div class="card accent">
+  <h4>One copy per port</h4>
+  <p>
+    Only one copy of this folder can run at a time, because the server deliberately
+    refuses to bind a port twice. If you want a second copy for experimenting, give it
+    a different <code>port</code> <em>and</em> <code>taskName</code> in
+    <code>instance.json</code>, or start it ad hoc with
+    <code>python server.py --port 8799 --no-browser</code>.
+  </p>
+</div>
+
+<h2 id="data">5. Demo data, and making it yours</h2>
+
+<p>
+  The folder ships with <strong>six fictitious clients and 37 items</strong> — Contoso,
+  Northwind and Fabrikam. Nothing in it relates to a real customer, so it is safe to
+  screen-share, demo, or hand to anyone.
+</p>
+
+<h3>Reset it</h3>
+<p>After a demo where you dragged cards around:</p>
+<pre><code>python seed_demo.py
+.\Watchdog.ps1 -Restart</code></pre>
+<p>
+  The rebuild is deterministic, but dates are always relative to <em>today</em>, so the
+  demo never looks stale.
+</p>
+
+<h3>Start using it for real work</h3>
+<ol>
+  <li>Go to <strong>Clients → + Add client</strong> and add your own.</li>
+  <li>
+    <strong>Review the search terms.</strong> The app derives a guess from the client
+    name, but organisations routinely file support cases under an operating-company name
+    that differs from their display name. This one field decides whether a scan finds
+    the work or silently returns nothing — it is worth two minutes of your attention.
+  </li>
+  <li>Leave <code>scanEnabled</code> off for internal boards; a "My Team" board has no mail to read.</li>
+  <li>
+    Delete the demo clients when you no longer need them, or keep them —
+    <code>My Team</code>, <code>Manager 1:1</code> and <code>MyLearning</code> are
+    genuinely useful as internal boards.
+  </li>
+</ol>
+
+<div class="card">
+  <h4>Where your data lives</h4>
+  <p>
+    Everything is in <code>data\store.json</code> — one readable, diffable JSON file.
+    Every write snapshots the previous state into <code>data\backups\</code> first.
+    There is no database and no cloud service; to back it up, copy the folder.
+  </p>
+</div>
+
+<h2 id="scout">6. Optional: the Microsoft Scout automation</h2>
+
+<p>
+  The board works perfectly well on its own — you can add and move items by hand. What
+  Microsoft Scout adds is the part that saves the time: a weekday-morning read of your
+  mail and Teams that <strong>proposes</strong> board changes and waits for you.
+</p>
+
+<p>Everything needed is in the <code>exports\</code> folder:</p>
+
+<table>
+  <tr><th>File</th><th>What it is</th></tr>
+  <tr><td><code>exports\automations\board-proposals.json</code></td><td>Scheduled automation — weekday scan that queues proposals</td></tr>
+  <tr><td><code>exports\skills\client-scan\SKILL.md</code></td><td>The same logic as <code>/client-scan</code>, on demand</td></tr>
+  <tr><td><code>exports\README.md</code></td><td>Import instructions, and how to try it against the demo data</td></tr>
+</table>
+
+<div class="card ok">
+  <h4>Neither can write to a board</h4>
+  <p>
+    Both only POST to the proposals queue. The closing line of each prompt is
+    <code>NEVER call POST/PUT/DELETE on {API}/items</code>. Every change is applied by a
+    human on the Proposals page, which shows the proposal side by side with whatever it
+    would change.
+  </p>
+</div>
+
+<p>
+  The automation ships <strong>disabled on purpose</strong>. It reads your mailbox every
+  weekday morning; that should not switch itself on because someone unzipped a folder.
+  Enable it once you've confirmed the board answers and you're comfortable.
+</p>
+
+<h2 id="trouble">7. Troubleshooting</h2>
+
+<h3 id="motw">"Cannot be loaded because running scripts is disabled" / nothing happens</h3>
+<p>
+  This is <strong>Mark of the Web</strong>, and it is the single most common failure with
+  a shared zip. Every file extracted from a downloaded or emailed archive carries a hidden
+  marker flagging it as internet-sourced, and PowerShell refuses to run it.
+</p>
+<p><code>Start.cmd</code> clears this automatically. To do it by hand:</p>
+<pre><code>cd "C:\path\to\SfMC-BoardIQ"
+Get-ChildItem -Recurse -File | Unblock-File</code></pre>
+<p>This affects only this folder. No machine-wide policy is changed.</p>
+
+<h3>"Python was not found"</h3>
+<p>See <a href="#req">section 1</a> — you most likely have the Microsoft Store alias rather than a real interpreter.</p>
+
+<h3>The browser opens but the page is blank or errors</h3>
+<pre><code>.\Watchdog.ps1 -Status</code></pre>
+<p>
+  If it reports DOWN, run <code>.\Watchdog.ps1</code> to start it, then check
+  <code>data\server.log</code> for the reason.
+</p>
+
+<h3>"Port 8791 is already in use"</h3>
+<p>Either the board is already running — just browse to it — or something else holds the port. To see what:</p>
+<pre><code>Get-NetTCPConnection -LocalPort 8791 -State Listen |
+  ForEach-Object { Get-Process -Id $_.OwningProcess }</code></pre>
+<p>To move the board instead, change <code>"port"</code> in <code>instance.json</code> and restart.</p>
+
+<h3>Everything looks broken after an edit</h3>
+<p>
+  Every write is snapshotted first. Restore the most recent good copy:
+</p>
+<pre><code>.\Watchdog.ps1 -Restart
+# if that isn't enough, restore a backup:
+Get-ChildItem data\backups\*.json | Sort-Object LastWriteTime -Descending |
+  Select-Object -First 5 Name, LastWriteTime</code></pre>
+<p>Copy the one you want over <code>data\store.json</code> and restart.</p>
+
+<h3>Is anything sent anywhere?</h3>
+<p>
+  No. The server binds <code>127.0.0.1</code> only — it is not reachable from the
+  network, not from your colleagues, not from the internet. The board itself makes no
+  outbound calls. The optional Scout automation reads <em>your</em> mailbox using
+  <em>your</em> existing sign-in, and writes only to the local proposals queue.
+</p>
+
+<h2 id="files">8. What's in the folder</h2>
+
+<table>
+  <tr><th>Item</th><th>What it does</th></tr>
+  <tr><td><code>Start.cmd</code></td><td><strong>Start here.</strong> Double-clickable launcher.</td></tr>
+  <tr><td><code>instance.json</code></td><td>Name, logo, port, scheduled-task name, which boards pin to the bottom. The only file that differs between deployments.</td></tr>
+  <tr><td><code>server.py</code></td><td>The whole back end — API plus static server. Standard library only.</td></tr>
+  <tr><td><code>app\</code></td><td>Front end: <code>index.html</code>, <code>app.js</code>, <code>styles.css</code>. No framework, no build step.</td></tr>
+  <tr><td><code>data\store.json</code></td><td>Your data. One JSON file.</td></tr>
+  <tr><td><code>data\backups\</code></td><td>Rolling snapshots, written before every change.</td></tr>
+  <tr><td><code>Watchdog.ps1</code></td><td>Health check, start, restart.</td></tr>
+  <tr><td><code>Install-Autostart.ps1</code></td><td>Registers or removes the scheduled task.</td></tr>
+  <tr><td><code>Start-Boards.ps1</code></td><td>Manual launcher with a visible console.</td></tr>
+  <tr><td><code>seed_demo.py</code></td><td>Rebuilds the fictitious demo data.</td></tr>
+  <tr><td><code>exports\</code></td><td>The Microsoft Scout automation and skill.</td></tr>
+  <tr><td><code>docs\</code></td><td>This guide, the solution overview deck, and screenshots.</td></tr>
+  <tr><td><code>README.md</code></td><td>Full reference documentation — also served at <code>/readme</code>.</td></tr>
+</table>
+
+<div class="card">
+  <h4>Everything in this folder is meant for you</h4>
+  <p>
+    There are no maintainer-only scripts in this package — the tooling used to publish
+    new versions is kept out deliberately, so nothing here expects a folder you don't
+    have.
+  </p>
+</div>
+
+<div class="foot">
+  <p>
+    <strong>SfMC:BoardIQ</strong> — local-first delivery boards. Ships with fictitious
+    demo data; all companies, people, case numbers and dates shown in this guide and in
+    the demo dataset are invented.
+  </p>
+  <p>
+    Next: open the <a href="SfMC-BoardIQ-overview.html">solution overview deck</a> for the
+    <em>why</em>, or the in-app documentation at <code>/readme</code> for the full reference.
+  </p>
+</div>
+
+</div>
+
+<script>
+document.getElementById('theme').addEventListener('click', () => {
+  const cur = document.documentElement.getAttribute('data-theme');
+  const next = cur === 'dark' ? 'light' : 'dark';
+  document.documentElement.setAttribute('data-theme', next);
+  try { localStorage.setItem('boardiqDocsTheme', next); } catch (e) {}
+});
+</script>
+</body>
+</html>

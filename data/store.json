@@ -75,7 +75,7 @@
       "searchTerms": "Northwind Traders, Northwind, NWT, northwindtraders.example",
       "scanEnabled": true,
       "scanRequested": false,
-      "lastScan": "2026-09-08T10:14:00+01:00"
+      "lastScan": "2026-09-13T10:14:00+01:00"
     },
     {
       "id": "contoso-financial",
@@ -95,7 +95,7 @@
       "searchTerms": "Contoso Financial Group, Contoso Financial, CFG, contosofinancial.example",
       "scanEnabled": true,
       "scanRequested": false,
-      "lastScan": "2026-09-09T10:07:00+01:00"
+      "lastScan": "2026-09-14T10:07:00+01:00"
     },
     {
       "id": "fabrikam-health",
@@ -115,7 +115,7 @@
       "searchTerms": "Fabrikam Health Systems, Fabrikam Health, FHS, fabrikamhealth.example",
       "scanEnabled": true,
       "scanRequested": false,
-      "lastScan": "2026-09-04T10:42:00+01:00"
+      "lastScan": "2026-09-09T10:42:00+01:00"
     },
     {
       "id": "my-team",
@@ -200,20 +200,20 @@
           "id": "431f1cc6",
           "author": "Alex Moreau",
           "text": "Wave 2 retro complete. Two lessons applied: earlier number-porting checks and a longer soak period.",
-          "created": "2026-09-04T14:42:00+01:00"
+          "created": "2026-09-09T14:42:00+01:00"
         },
         {
           "id": "b4aa4441",
           "author": "Dana Whitfield",
           "text": "Site contacts confirmed for all 14 EMEA locations.",
-          "created": "2026-09-08T14:14:00+01:00"
+          "created": "2026-09-13T14:14:00+01:00"
         }
       ],
       "archived": false,
       "storyPoints": "8",
       "risk": "",
       "valueArea": "Business",
-      "dueDate": "2026-09-19",
+      "dueDate": "2026-09-24",
       "description": "Cut over the remaining 4,200 seats in EMEA. Wave 2 completed with a 0.4% failure rate; wave 3 doubles the user count.",
       "acceptance": "All EMEA sites dialling out on Teams Phone; no P1 voice incidents for 5 business days post-cutover.",
       "escalatedTo": [],
@@ -224,8 +224,8 @@
       "dcrId": "",
       "dcrStatus": "",
       "meetingStatus": "Scheduled",
-      "created": "2026-07-30T10:54:00+01:00",
-      "changed": "2026-09-09T10:07:00+01:00",
+      "created": "2026-08-04T10:54:00+01:00",
+      "changed": "2026-09-14T10:07:00+01:00",
       "createdBy": "Demo"
     },
     {
@@ -262,8 +262,8 @@
       "dcrId": "",
       "dcrStatus": "",
       "meetingStatus": "N/A",
-      "created": "2026-08-20T10:27:00+01:00",
-      "changed": "2026-09-10T10:00:00+01:00",
+      "created": "2026-08-25T10:27:00+01:00",
+      "changed": "2026-09-15T10:00:00+01:00",
       "createdBy": "Demo"
     },
     {
@@ -297,8 +297,8 @@
       "dcrId": "",
       "dcrStatus": "",
       "meetingStatus": "N/A",
-      "created": "2026-06-28T10:38:00+01:00",
-      "changed": "2026-08-29T10:24:00+01:00",
+      "created": "2026-07-03T10:38:00+01:00",
+      "changed": "2026-09-03T10:24:00+01:00",
       "createdBy": "Demo"
     },
     {
@@ -332,8 +332,8 @@
       "dcrId": "",
       "dcrStatus": "",
       "meetingStatus": "N/A",
-      "created": "2026-06-06T10:12:00+01:00",
-      "changed": "2026-08-21T10:20:00+01:00",
+      "created": "2026-06-11T10:12:00+01:00",
+      "changed": "2026-08-26T10:20:00+01:00",
       "createdBy": "Demo"
     },
     {
@@ -367,8 +367,8 @@
       "dcrId": "",
       "dcrStatus": "",
       "meetingStatus": "Scheduling",
-      "created": "2026-08-11T10:30:00+01:00",
-      "changed": "2026-09-06T10:28:00+01:00",
+      "created": "2026-08-16T10:30:00+01:00",
+      "changed": "2026-09-11T10:28:00+01:00",
       "createdBy": "Demo"
     },
     {
@@ -402,8 +402,8 @@
       "dcrId": "",
       "dcrStatus": "",
       "meetingStatus": "N/A",
-      "created": "2026-05-15T10:46:00+01:00",
-      "changed": "2026-08-29T10:24:00+01:00",
+      "created": "2026-05-20T10:46:00+01:00",
+      "changed": "2026-09-03T10:24:00+01:00",
       "createdBy": "Demo"
     },
     {
@@ -438,8 +438,8 @@
       "dcrId": "",
       "dcrStatus": "",
       "meetingStatus": "Scheduling",
-      "created": "2026-09-05T10:35:00+01:00",
-      "changed": "2026-09-05T10:35:00+01:00",
+      "created": "2026-09-10T10:35:00+01:00",
+      "changed": "2026-09-10T10:35:00+01:00",
       "createdBy": "Demo"
     },
     {
@@ -475,8 +475,8 @@
       "dcrId": "",
       "dcrStatus": "",
       "meetingStatus": "N/A",
-      "created": "2026-07-09T10:21:00+01:00",
-      "changed": "2026-09-01T10:03:00+01:00",
+      "created": "2026-07-14T10:21:00+01:00",
+      "changed": "2026-09-06T10:03:00+01:00",
       "createdBy": "Demo"
     },
     {
@@ -500,20 +500,20 @@
           "id": "f4733100",
           "author": "Jordan Reyes",
           "text": "Persona model agreed: workforce, privileged, external, service, break-glass.",
-          "created": "2026-08-31T14:10:00+01:00"
+          "created": "2026-09-05T14:10:00+01:00"
         },
         {
           "id": "359dea4c",
           "author": "Marcus Bell",
           "text": "Risk and compliance signed off on the report-only approach.",
-          "created": "2026-09-07T14:21:00+01:00"
+          "created": "2026-09-12T14:21:00+01:00"
         }
       ],
       "archived": false,
       "storyPoints": "13",
       "risk": "",
       "valueArea": "Architectural",
-      "dueDate": "2026-10-01",
+      "dueDate": "2026-10-06",
       "description": "Consolidate 47 overlapping CA policies into a 9-policy persona model. Regulator requires documented evidence of least privilege.",
       "acceptance": "Policy count under 12, every policy mapped to a persona, report-only run clean for 14 days.",
       "escalatedTo": [],
@@ -524,8 +524,8 @@
       "dcrId": "",
       "dcrStatus": "",
       "meetingStatus": "Scheduled",
-      "created": "2026-07-17T10:25:00+01:00",
-      "changed": "2026-09-10T10:00:00+01:00",
+      "created": "2026-07-22T10:25:00+01:00",
+      "changed": "2026-09-15T10:00:00+01:00",
       "createdBy": "Demo"
     },
     {
@@ -548,19 +548,19 @@
           "id": "2b6a543c",
           "author": "Sam Okafor",
           "text": "Confirmed the rule was introduced in change CHG-4471. Rolled back in report-only while PG assesses.",
-          "created": "2026-09-01T14:03:00+01:00"
+          "created": "2026-09-06T14:03:00+01:00"
         },
         {
           "id": "44715240",
           "author": "Lena Vasquez",
           "text": "Partners have a manual workaround but it will not hold past month end.",
-          "created": "2026-09-04T14:42:00+01:00"
+          "created": "2026-09-09T14:42:00+01:00"
         },
         {
           "id": "7d6cbad9",
           "author": "Sam Okafor",
           "text": "DCR-24817 moved to in progress. Targeting a fix in the next service update.",
-          "created": "2026-09-10T14:00:00+01:00"
+          "created": "2026-09-15T14:00:00+01:00"
         }
       ],
       "archived": false,
@@ -581,8 +581,8 @@
       "dcrId": "DCR-24817",
       "dcrStatus": "in progress",
       "meetingStatus": "Scheduled",
-      "created": "2026-08-30T10:17:00+01:00",
-      "changed": "2026-09-10T10:00:00+01:00",
+      "created": "2026-09-04T10:17:00+01:00",
+      "changed": "2026-09-15T10:00:00+01:00",
       "createdBy": "Demo"
     },
     {
@@ -616,8 +616,8 @@
       "dcrId": "DCR-24655",
       "dcrStatus": "submitted",
       "meetingStatus": "N/A",
-      "created": "2026-08-03T10:26:00+01:00",
-      "changed": "2026-09-08T10:14:00+01:00",
+      "created": "2026-08-08T10:26:00+01:00",
+      "changed": "2026-09-13T10:14:00+01:00",
       "createdBy": "Demo"
     },
     {
@@ -641,7 +641,7 @@
       "storyPoints": "",
       "risk": "",
       "valueArea": "Business",
-      "dueDate": "2026-10-25",
+      "dueDate": "2026-10-30",
       "description": "Assemble CA policy exports, sign-in log retention proof, and privileged access review records.",
       "acceptance": "",
       "escalatedTo": [],
@@ -652,8 +652,8 @@
       "dcrId": "",
       "dcrStatus": "",
       "meetingStatus": "Scheduling",
-      "created": "2026-09-02T10:56:00+01:00",
-      "changed": "2026-09-07T10:21:00+01:00",
+      "created": "2026-09-07T10:56:00+01:00",
+      "changed": "2026-09-12T10:21:00+01:00",
       "createdBy": "Demo"
     },
     {
@@ -687,8 +687,8 @@
       "dcrId": "",
       "dcrStatus": "",
       "meetingStatus": "N/A",
-      "created": "2026-06-15T10:09:00+01:00",
-      "changed": "2026-08-25T10:52:00+01:00",
+      "created": "2026-06-20T10:09:00+01:00",
+      "changed": "2026-08-30T10:52:00+01:00",
       "createdBy": "Demo"
     },
     {
@@ -725,8 +725,8 @@
       "dcrId": "",
       "dcrStatus": "",
       "meetingStatus": "N/A",
-      "created": "2026-08-15T10:02:00+01:00",
-      "changed": "2026-09-03T10:49:00+01:00",
+      "created": "2026-08-20T10:02:00+01:00",
+      "changed": "2026-09-08T10:49:00+01:00",
       "createdBy": "Demo"
     },
     {
@@ -759,8 +759,8 @@
       "dcrId": "",
       "dcrStatus": "",
       "meetingStatus": "Scheduled",
-      "created": "2026-05-13T10:00:00+01:00",
-      "changed": "2026-09-09T10:07:00+01:00",
+      "created": "2026-05-18T10:00:00+01:00",
+      "changed": "2026-09-14T10:07:00+01:00",
       "createdBy": "Demo"
     },
     {
@@ -794,8 +794,8 @@
       "dcrId": "",
       "dcrStatus": "",
       "meetingStatus": "TBR",
-      "created": "2026-09-06T10:28:00+01:00",
-      "changed": "2026-09-06T10:28:00+01:00",
+      "created": "2026-09-11T10:28:00+01:00",
+      "changed": "2026-09-11T10:28:00+01:00",
       "createdBy": "Demo"
     },
     {
@@ -828,8 +828,8 @@
       "dcrId": "",
       "dcrStatus": "",
       "meetingStatus": "N/A",
-      "created": "2026-04-20T10:41:00+01:00",
-      "changed": "2026-08-13T10:16:00+01:00",
+      "created": "2026-04-25T10:41:00+01:00",
+      "changed": "2026-08-18T10:16:00+01:00",
       "createdBy": "Demo"
     },
     {
@@ -852,14 +852,14 @@
           "id": "77989ce0",
           "author": "Taylor Nkemdirim",
           "text": "Pulling delivery evidence now. Three avoided SEVs is the strongest line.",
-          "created": "2026-09-06T14:28:00+01:00"
+          "created": "2026-09-11T14:28:00+01:00"
         }
       ],
       "archived": false,
       "storyPoints": "",
       "risk": "",
       "valueArea": "Business",
-      "dueDate": "2026-10-10",
+      "dueDate": "2026-10-15",
       "description": "Package expires 30 Nov 2026. Build the value story: 3 SEVs avoided, 2 major migrations delivered.",
       "acceptance": "",
       "escalatedTo": [
@@ -872,8 +872,8 @@
       "dcrId": "",
       "dcrStatus": "",
       "meetingStatus": "Scheduled",
-      "created": "2026-08-27T10:38:00+01:00",
-      "changed": "2026-09-10T10:00:00+01:00",
+      "created": "2026-09-01T10:38:00+01:00",
+      "changed": "2026-09-15T10:00:00+01:00",
       "createdBy": "Demo"
     },
     {
@@ -897,7 +897,7 @@
       "storyPoints": "13",
       "risk": "1 - High",
       "valueArea": "",
-      "dueDate": "2026-09-26",
+      "dueDate": "2026-10-01",
       "description": "6,000 clinical endpoints, many running vendor-locked imaging software. Cannot reboot during clinical hours.",
       "acceptance": "95% onboarded and reporting; zero clinical application regressions.",
       "escalatedTo": [],
@@ -908,8 +908,8 @@
       "dcrId": "",
       "dcrStatus": "",
       "meetingStatus": "Scheduled",
-      "created": "2026-07-23T10:43:00+01:00",
-      "changed": "2026-09-09T10:07:00+01:00",
+      "created": "2026-07-28T10:43:00+01:00",
+      "changed": "2026-09-14T10:07:00+01:00",
       "createdBy": "Demo"
     },
     {
@@ -933,13 +933,13 @@
           "id": "5786264f",
           "author": "Riley Chen",
           "text": "Reproduced in the lab with the vendor's own installer. Not environment-specific.",
-          "created": "2026-08-29T14:24:00+01:00"
+          "created": "2026-09-03T14:24:00+01:00"
         },
         {
           "id": "7ba1f8bc",
           "author": "Hugo Lindqvist",
           "text": "Clinical leadership will not accept a blanket exclusion. Needs a targeted rule.",
-          "created": "2026-09-05T14:35:00+01:00"
+          "created": "2026-09-10T14:35:00+01:00"
         }
       ],
       "archived": false,
@@ -959,8 +959,8 @@
       "dcrId": "DCR-24902",
       "dcrStatus": "escalated",
       "meetingStatus": "Scheduled",
-      "created": "2026-08-22T10:13:00+01:00",
-      "changed": "2026-09-08T10:14:00+01:00",
+      "created": "2026-08-27T10:13:00+01:00",
+      "changed": "2026-09-13T10:14:00+01:00",
       "createdBy": "Demo"
     },
     {
@@ -994,8 +994,8 @@
       "dcrId": "",
       "dcrStatus": "",
       "meetingStatus": "Scheduling",
-      "created": "2026-07-05T10:49:00+01:00",
-      "changed": "2026-09-05T10:35:00+01:00",
+      "created": "2026-07-10T10:49:00+01:00",
+      "changed": "2026-09-10T10:35:00+01:00",
       "createdBy": "Demo"
     },
     {
@@ -1029,8 +1029,8 @@
       "dcrId": "",
       "dcrStatus": "",
       "meetingStatus": "N/A",
-      "created": "2026-06-01T10:47:00+01:00",
-      "changed": "2026-08-16T10:55:00+01:00",
+      "created": "2026-06-06T10:47:00+01:00",
+      "changed": "2026-08-21T10:55:00+01:00",
       "createdBy": "Demo"
     },
     {
@@ -1064,8 +1064,8 @@
       "dcrId": "",
       "dcrStatus": "",
       "meetingStatus": "TBR",
-      "created": "2026-08-08T10:51:00+01:00",
-      "changed": "2026-08-30T10:17:00+01:00",
+      "created": "2026-08-13T10:51:00+01:00",
+      "changed": "2026-09-04T10:17:00+01:00",
       "createdBy": "Demo"
     },
     {
@@ -1100,8 +1100,8 @@
       "dcrId": "",
       "dcrStatus": "",
       "meetingStatus": "N/A",
-      "created": "2026-06-23T10:13:00+01:00",
-      "changed": "2026-08-17T10:48:00+01:00",
+      "created": "2026-06-28T10:13:00+01:00",
+      "changed": "2026-08-22T10:48:00+01:00",
       "createdBy": "Demo"
     },
     {
@@ -1136,8 +1136,8 @@
       "dcrId": "",
       "dcrStatus": "",
       "meetingStatus": "N/A",
-      "created": "2026-05-02T10:17:00+01:00",
-      "changed": "2026-06-07T10:05:00+01:00",
+      "created": "2026-05-07T10:17:00+01:00",
+      "changed": "2026-06-12T10:05:00+01:00",
       "createdBy": "Demo"
     },
     {
@@ -1171,8 +1171,8 @@
       "dcrId": "",
       "dcrStatus": "",
       "meetingStatus": "N/A",
-      "created": "2026-08-19T10:34:00+01:00",
-      "changed": "2026-09-08T10:14:00+01:00",
+      "created": "2026-08-24T10:34:00+01:00",
+      "changed": "2026-09-13T10:14:00+01:00",
       "createdBy": "Demo"
     },
     {
@@ -1206,8 +1206,8 @@
       "dcrId": "",
       "dcrStatus": "",
       "meetingStatus": "Scheduling",
-      "created": "2026-08-24T10:59:00+01:00",
-      "changed": "2026-09-04T10:42:00+01:00",
+      "created": "2026-08-29T10:59:00+01:00",
+      "changed": "2026-09-09T10:42:00+01:00",
       "createdBy": "Demo"
     },
     {
@@ -1230,7 +1230,7 @@
       "storyPoints": "",
       "risk": "",
       "valueArea": "",
-      "dueDate": "2026-09-17",
+      "dueDate": "2026-09-22",
       "description": "Quarterly rotation for the shared demo tenant.",
       "acceptance": "",
       "escalatedTo": [],
@@ -1241,8 +1241,8 @@
       "dcrId": "",
       "dcrStatus": "",
       "meetingStatus": "N/A",
-      "created": "2026-09-07T10:21:00+01:00",
-      "changed": "2026-09-07T10:21:00+01:00",
+      "created": "2026-09-12T10:21:00+01:00",
+      "changed": "2026-09-12T10:21:00+01:00",
       "createdBy": "Demo"
     },
     {
@@ -1276,8 +1276,8 @@
       "dcrId": "",
       "dcrStatus": "",
       "meetingStatus": "N/A",
-      "created": "2026-07-14T10:46:00+01:00",
-      "changed": "2026-09-01T10:03:00+01:00",
+      "created": "2026-07-19T10:46:00+01:00",
+      "changed": "2026-09-06T10:03:00+01:00",
       "createdBy": "Demo"
     },
     {
@@ -1311,8 +1311,8 @@
       "dcrId": "",
       "dcrStatus": "",
       "meetingStatus": "Scheduled",
-      "created": "2026-07-27T10:15:00+01:00",
-      "changed": "2026-09-02T10:56:00+01:00",
+      "created": "2026-08-01T10:15:00+01:00",
+      "changed": "2026-09-07T10:56:00+01:00",
       "createdBy": "Demo"
     },
     {
@@ -1335,7 +1335,7 @@
           "id": "4f8bd7fa",
           "author": "Alex Moreau",
           "text": "Bringing the hours breakdown to the next 1:1.",
-          "created": "2026-09-09T14:07:00+01:00"
+          "created": "2026-09-14T14:07:00+01:00"
         }
       ],
       "archived": false,
@@ -1355,8 +1355,8 @@
       "dcrId": "",
       "dcrStatus": "",
       "meetingStatus": "Scheduled",
-      "created": "2026-08-15T10:02:00+01:00",
-      "changed": "2026-09-09T10:07:00+01:00",
+      "created": "2026-08-20T10:02:00+01:00",
+      "changed": "2026-09-14T10:07:00+01:00",
       "createdBy": "Demo"
     },
     {
@@ -1390,8 +1390,8 @@
       "dcrId": "",
       "dcrStatus": "",
       "meetingStatus": "N/A",
-      "created": "2026-06-10T10:44:00+01:00",
-      "changed": "2026-07-02T10:10:00+01:00",
+      "created": "2026-06-15T10:44:00+01:00",
+      "changed": "2026-07-07T10:10:00+01:00",
       "createdBy": "Demo"
     },
     {
@@ -1414,7 +1414,7 @@
       "storyPoints": "13",
       "risk": "",
       "valueArea": "",
-      "dueDate": "2026-10-18",
+      "dueDate": "2026-10-23",
       "description": "Exam booked. Weakest area is hybrid identity - two labs remaining.",
       "acceptance": "",
       "escalatedTo": [],
@@ -1425,8 +1425,8 @@
       "dcrId": "",
       "dcrStatus": "",
       "meetingStatus": "N/A",
-      "created": "2026-07-11T10:07:00+01:00",
-      "changed": "2026-09-07T10:21:00+01:00",
+      "created": "2026-07-16T10:07:00+01:00",
+      "changed": "2026-09-12T10:21:00+01:00",
       "createdBy": "Demo"
     },
     {
@@ -1461,8 +1461,8 @@
       "dcrId": "",
       "dcrStatus": "",
       "meetingStatus": "N/A",
-      "created": "2026-08-12T10:23:00+01:00",
-      "changed": "2026-09-06T10:28:00+01:00",
+      "created": "2026-08-17T10:23:00+01:00",
+      "changed": "2026-09-11T10:28:00+01:00",
       "createdBy": "Demo"
     },
     {
@@ -1496,8 +1496,8 @@
       "dcrId": "",
       "dcrStatus": "",
       "meetingStatus": "N/A",
-      "created": "2026-09-01T10:03:00+01:00",
-      "changed": "2026-09-01T10:03:00+01:00",
+      "created": "2026-09-06T10:03:00+01:00",
+      "changed": "2026-09-06T10:03:00+01:00",
       "createdBy": "Demo"
     },
     {
@@ -1531,8 +1531,8 @@
       "dcrId": "",
       "dcrStatus": "",
       "meetingStatus": "N/A",
-      "created": "2026-06-26T10:52:00+01:00",
-      "changed": "2026-08-24T10:59:00+01:00",
+      "created": "2026-07-01T10:52:00+01:00",
+      "changed": "2026-08-29T10:59:00+01:00",
       "createdBy": "Demo"
     },
     {
@@ -1566,8 +1566,8 @@
       "dcrId": "",
       "dcrStatus": "",
       "meetingStatus": "N/A",
-      "created": "2026-08-01T10:40:00+01:00",
-      "changed": "2026-08-23T10:06:00+01:00",
+      "created": "2026-08-06T10:40:00+01:00",
+      "changed": "2026-08-28T10:06:00+01:00",
       "createdBy": "Demo"
     }
   ]

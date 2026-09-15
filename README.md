@@ -26,6 +26,7 @@ so a fresh clone is immediately runnable and safe to screen-share.
 8. [Files](#8-files)
 9. [Publishing as a private repository](#9-publishing-as-a-private-repository)
 10. [Before you present](#10-before-you-present)
+11. [Packaging for your team](#11-packaging-for-your-team)
 
 ---
 
@@ -54,8 +55,14 @@ python --version
 
 ### Run it
 
+**Easiest — double-click `Start.cmd`.** It clears Mark of the Web on this folder,
+checks Python, and starts the server with a visible console.
+
+Or from a terminal:
+
 ```powershell
 cd "C:\GitHub\SfMC-BoardIQ"
+Get-ChildItem -Recurse -File | Unblock-File   # only after extracting a .zip
 .\Start-Boards.ps1
 ```
 
@@ -63,6 +70,11 @@ That starts the server in the foreground with a console — good for a first run
 because you see any error. Open <http://127.0.0.1:8791>.
 
 You should see **6 clients / 37 items**. If you do, everything works.
+
+> **Sharing this with someone else?** Hand them the packaged `.zip` (see
+> [section 11](#11-packaging-for-your-team)) rather than a copy of this folder. It
+> contains a browser-based install guide at `docs\INSTALL.html` written for someone
+> who has never seen the project.
 
 ### Keep it running without a terminal
 
@@ -358,6 +370,7 @@ is safe for clients, partners and external audiences.
 ```
 SfMC-BoardIQ\
 ├─ .gitignore              excludes backups, logs, __pycache__
+├─ Start.cmd               double-clickable launcher (clears Mark of the Web)
 ├─ instance.json           branding, port, pinning        ← instance-specific
 ├─ server.py               API + static server            ← shared code
 ├─ app\                    index.html · app.js · styles.css  ← shared code
@@ -365,8 +378,9 @@ SfMC-BoardIQ\
 ├─ Install-Autostart.ps1   scheduled task registration    ← shared code
 ├─ Start-Boards.ps1        manual launcher with console   ← shared code
 ├─ Sync-AzureDevOps.ps1    unused here (adoEnabled false) ← shared code
-├─ Update-FromSfMC.ps1     pulls code from an upstream board
-├─ Export-Repo.ps1         full refresh + safety scan + mirror to the repo folder
+├─ Update-FromSfMC.ps1     pulls code from an upstream board        ← maintainer
+├─ Export-Repo.ps1         refresh + safety scan + mirror to repo   ← maintainer
+├─ Package.ps1             build the shareable .zip                 ← maintainer
 ├─ seed_demo.py            rebuilds the fictitious data
 ├─ build_overview.py       builds the deck
 ├─ exports\                everything Microsoft Scout needs
@@ -380,10 +394,15 @@ SfMC-BoardIQ\
 │  ├─ backups\             rolling snapshots on every write  (ignored)
 │  └─ code-backups\        pre-update copies from Update-FromSfMC  (ignored)
 └─ docs\
+   ├─ INSTALL.html         browser-based install guide for recipients
    ├─ SfMC-BoardIQ-overview.html   the deck
    ├─ deck\                theme.css · nav.js — deck styling and navigation
    └─ screenshots\         deck images (.jpg)
 ```
+
+The three files marked **maintainer** publish new versions of the package. They are
+deliberately **excluded from the shareable .zip** — they expect folders a recipient
+will not have, and are never needed to run the board.
 
 ---
 
@@ -449,3 +468,62 @@ Two things to keep in mind:
 Suggested five-minute path: **portfolio view** → open a client board → open the
 escalated Contoso bug to show the field depth → **Dashboard** → **Proposals**
 to land the human-in-the-loop point.
+
+---
+
+## 11. Packaging for your team
+
+To hand the board to colleagues, build a self-contained `.zip`:
+
+```powershell
+cd "…\Microsoft Scout\SfMC-BoardIQ"
+.\Package.ps1
+```
+
+One command: refresh the repository copy (running the export safety scan), stage a
+clean tree, verify it, zip it, then re-open the archive and check it.
+
+| Switch | Effect |
+|---|---|
+| `-SkipExport` | Package whatever is in the repo folder now, without re-syncing |
+| `-OutDir "C:\Share"` | Write the `.zip` somewhere other than the parent folder |
+| `-Version 1.1` | Override the version label (defaults to today's date) |
+
+### What ships, and what doesn't
+
+The zip is built from the **repository copy**, never from the working folder — the
+repo copy has already been through the export safety scan. Excluded:
+
+`.git` · `data\backups\` · `data\code-backups\` · `__pycache__` · `*.log` ·
+`proposals.json` · `.export-blocklist` · `.gitignore` ·
+`Export-Repo.ps1` · `Update-FromSfMC.ps1` · `Package.ps1`
+
+Added: `data\backups\.keep`, so the folder the app expects exists on extraction.
+
+### Four checks before it writes the file
+
+1. **Required files present** — 15 of them, from `Start.cmd` to `docs\INSTALL.html`.
+2. **No blocked files** — refuses to build if a log, the blocklist or a maintainer
+   script made it into the staging tree.
+3. **Demo data only** — parses `data\store.json` and refuses to package if it finds
+   any client that is not one of the six fictitious ones. This is the guard that stops
+   a real board being shipped to the team by accident.
+4. **Archive re-opened and verified** — single top-level folder, every required file
+   present inside it.
+
+Any failure aborts before the `.zip` exists, so there is no half-built archive to
+accidentally send.
+
+### What recipients get
+
+- A single top-level `SfMC-BoardIQ\` folder, so extracting doesn't spray files.
+- `Start.cmd` — double-click, no terminal knowledge needed.
+- `docs\INSTALL.html` — a browser-based install guide written for someone who has
+  never seen the project: requirements, three-step setup, a tour, troubleshooting for
+  the real failure modes, and what's in the folder.
+- The demo dataset, so the board is useful the second it opens.
+
+> **Mark of the Web is the one thing that breaks shared zips.** Every file extracted
+> from a downloaded or emailed archive is flagged internet-sourced, and PowerShell
+> refuses to run it. `Start.cmd` clears it for that folder before doing anything else,
+> which is the main reason it exists.
