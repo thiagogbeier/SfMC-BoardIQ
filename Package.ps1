@@ -139,7 +139,9 @@ Add-Type -AssemblyName System.IO.Compression
 $za = [IO.Compression.ZipFile]::OpenRead($zip)
 try {
   $entries = $za.Entries | ForEach-Object { $_.FullName }
-  $top = ($entries | ForEach-Object { ($_ -split '/')[0] } | Select-Object -Unique)
+  # @() matters: with a single unique value Select-Object returns a scalar string,
+  # and indexing a string gives you its first CHARACTER, not the whole name.
+  $top = @($entries | ForEach-Object { ($_ -split '/')[0] } | Select-Object -Unique)
   if ($top.Count -ne 1 -or $top[0] -ne 'SfMC-BoardIQ') {
     throw "Archive should contain exactly one top-level folder 'SfMC-BoardIQ' but found: $($top -join ', ')"
   }
