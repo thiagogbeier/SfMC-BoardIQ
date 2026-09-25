@@ -4,7 +4,6 @@
 # machine-local churn.
 data/backups/
 data/code-backups/
-data/proposals.json
 data/*.log
 data/*.tmp
 data/store.json.tmp
@@ -33,3 +32,7 @@ desktop.ini
 ~$*
 *.tmp
 .~lock.*
+
+# --- local-only notes ------------------------------------------------------
+# Personal working notes / how-tos that must never be published to the repo.
+localdocs/
